@@ -1,9 +1,10 @@
-import React from 'react'
-import { Product } from './Product'
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { Product } from './Product';
 
 export const Products = () => {
   // TODO - fetch all products from the store
-  const allProducts = []
+  const allProducts = useSelector((state) => state.products);
 
   return (
     <div className="products">
@@ -11,5 +12,5 @@ export const Products = () => {
         <Product key={product.id} product={product} />
       ))}
     </div>
-  )
-}
+  );
+};
